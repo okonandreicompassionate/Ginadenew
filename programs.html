@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roadmap of Activities | Oinia Elementary School</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root { 
+      --primary: #4e9af1; --accent: #ffd166; --glass: rgba(255,255,255,0.45); 
+      --glass-border: rgba(76, 173, 255, 0.13); --heading: 'Playfair Display', serif; 
+      --body: 'Nunito', Arial, sans-serif;
+      --road-bg: linear-gradient(90deg, #f6f8fc 0%, #e3f0ff 100%);
+    }
+    body { font-family: var(--body); background: var(--road-bg); min-height: 100vh; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--heading); letter-spacing: 0.5px;}
+    .navbar { background: var(--glass)!important; border-bottom: 2px solid var(--glass-border); box-shadow: 0 2px 16px var(--glass-border);}
+    .navbar-brand, .nav-link { color: var(--primary)!important; font-weight: 600; font-family: var(--heading);}
+    .navbar-brand img { height: 32px; margin-right: 0.5em;}
+    .nav-link.active, .nav-link:hover { color: #1877f2!important; background: var(--glass); border-radius: 10px; padding: 0.4em 0.9em;}
+    .roadmap-section {
+      max-width: 1050px;
+      margin: 2em auto 1em;
+      background: var(--glass);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px var(--glass-border);
+      padding: 2em 1em;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s;
+    }
+    .roadmap-title {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 1.6em;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px #4e9af122;
+    }
+    .timeline {
+      position: relative;
+      margin: 1em 0 2em 0;
+      padding: 1em 0;
+    }
+    .timeline:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 100%;
+      background: linear-gradient(180deg, #4e9af133 0%, #ffd16633 100%);
+      border-radius: 8px;
+      z-index: 1;
+    }
+    .timeline-event {
+      position: relative;
+      width: 48%;
+      margin-bottom: 3.5em;
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px var(--glass-border);
+      padding: 1.3em 1.1em 1em 1.1em;
+      animation: fadeInUp 1.1s;
+      z-index: 2;
+    }
+    .timeline-event-left {
+      left: 0;
+      float: left;
+      clear: left;
+      margin-right: 2%;
+    }
+    .timeline-event-right {
+      right: 0;
+      float: right;
+      clear: right;
+      margin-left: 2%;
+    }
+    .timeline-event .event-header {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 0.5em;
+    }
+    .timeline-event .event-icon {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: var(--accent);
+      box-shadow: 0 2px 7px #ffd16633;
+    }
+    .timeline-event .event-title {
+      font-size: 1.25em;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.1em;
+    }
+    .timeline-event .event-date {
+      font-size: 1.01em;
+      color: #1877f2;
+      font-weight: 600;
+      margin-bottom: 0.3em;
+    }
+    .timeline-event .event-desc {
+      font-size: 1em;
+      color: #333c55;
+    }
+    .timeline-event .event-gallery {
+      margin-top: 0.8em;
+      display: flex;
+      gap: 0.7em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .timeline-event .event-img {
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 7px;
+      box-shadow: 0 2px 6px #4e9af133;
+    }
+    /* Responsive timeline */
+    @media (max-width: 900px) {
+      .timeline-event { width: 99%; float:none; margin-left:0; margin-right:0;}
+      .timeline:before { left: 3%; width: 5px;}
+      .roadmap-section {padding:1.2em 0.3em;}
+    }
+    @media (max-width:600px) {
+      .timeline-event { padding:0.7em 0.3em;}
+      .roadmap-title {font-size:1.25em;}
+      .timeline-event .event-title {font-size:1.05em;}
+      .timeline-event .event-header {gap:0.5em;}
+      .timeline-event .event-icon {width:34px;height:34px;}
+      .timeline-event .event-gallery .event-img { width:38px;height:26px;}
+      .footer-section{font-size:0.83em;}
+    }
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes zoomIn {from{opacity:0;transform:scale(.8);}to{opacity:1;transform:scale(1);}}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=80" alt="School Logo">
+        Oinia Elementary
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-2 gap-1">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<section class="roadmap-section">
+  <div class="roadmap-title animate__animated animate__fadeInDown">
+    Oinia Elementary Roadmap of Activities & Programs
+  </div>
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="timeline-event timeline-event-left">
+      <div class="event-header">
+        <img src="https://img.freepik.com/free-icon/book_318-154277.jpg?w=48" class="event-icon" alt="Academics">
+        <div>
+          <div class="event-title">Academic Kickoff</div>
+          <div class="event-date">September 2</div>
+        </div>
+      </div>
+      <div class="event-desc">
+        Start the year with themed assemblies, classroom orientations, and buddy welcome activities. Each grade receives a roadmap of learning goals and fun challenges.
+      </div>
+      <div class="event-gallery">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Orientation">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Classroom">
+      </div>
+    </div>
+    <div class="timeline-event timeline-event-right">
+      <div class="event-header">
+        <img src="https://img.freepik.com/free-icon/art_318-177922.jpg?w=48" class="event-icon" alt="Arts">
+        <div>
+          <div class="event-title">Art & Music Festival</div>
+          <div class="event-date">October 6</div>
+        </div>
+      </div>
+      <div class="event-desc">
+        A week of creative workshops, daily music performances, and a student gallery. Visiting artists and musicians inspire every child to create their own masterpiece.
+      </div>
+      <div class="event-gallery">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Art">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Music">
+      </div>
+    </div>
+    <div class="timeline-event timeline-event-left">
+      <div class="event-header">
+        <img src="https://img.freepik.com/free-icon/soccer_318-177928.jpg?w=48" class="event-icon" alt="Sports">
+        <div>
+          <div class="event-title">Sports & Wellness Month</div>
+          <div class="event-date">November</div>
+        </div>
+      </div>
+      <div class="event-desc">
+        Daily fitness challenges, team games, and nutrition workshops. Family Field Day, yoga mornings, and “Walk to School” week promote a healthy lifestyle.
+      </div>
+      <div class="event-gallery">
+        <img src="https://images.unsplash.com/photo-1519864600265-abb224a4bfa3?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Sports">
+        <img src="https://images.unsplash.com/photo-1456327102063-fb5054efe647?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Yoga">
+      </div>
+    </div>
+    <div class="timeline-event timeline-event-right">
+      <div class="event-header">
+        <img src="https://img.freepik.com/free-icon/psychology_318-177929.jpg?w=48" class="event-icon" alt="Support">
+        <div>
+          <div class="event-title">Wellbeing & Kindness Week</div>
+          <div class="event-date">December</div>
+        </div>
+      </div>
+      <div class="event-desc">
+        Daily mindfulness exercises, kindness challenges, and support circles. School counselors lead workshops on positive relationships and emotional health.
+      </div>
+      <div class="event-gallery">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Wellbeing">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Counselor">
+      </div>
+    </div>
+    <div class="timeline-event timeline-event-left">
+      <div class="event-header">
+        <img src="https://img.freepik.com/free-icon/parent_318-177921.jpg?w=48" class="event-icon" alt="Community">
+        <div>
+          <div class="event-title">Community & Clubs Launch</div>
+          <div class="event-date">January</div>
+        </div>
+      </div>
+      <div class="event-desc">
+        New clubs kick off: robotics, gardening, drama, chess, and more. Parent volunteers and teachers host leadership workshops and service projects.
+      </div>
+      <div class="event-gallery">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Clubs">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Robotics">
+      </div>
+    </div>
+    <div class="timeline-event timeline-event-right">
+      <div class="event-header">
+        <img src="https://img.freepik.com/free-icon/book_318-154277.jpg?w=48" class="event-icon" alt="Academic">
+        <div>
+          <div class="event-title">Spring STEM Showcase</div>
+          <div class="event-date">March</div>
+        </div>
+      </div>
+      <div class="event-desc">
+        Science fair, coding contests, and engineering design challenges. Families explore interactive exhibits and student inventions.
+      </div>
+      <div class="event-gallery">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=350&q=80" class="event-img" alt="STEM">
+        <img src="https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Coding">
+      </div>
+    </div>
+    <div class="timeline-event timeline-event-left">
+      <div class="event-header">
+        <img src="https://img.freepik.com/free-icon/art_318-177922.jpg?w=48" class="event-icon" alt="Creativity">
+        <div>
+          <div class="event-title">End-of-Year Carnival</div>
+          <div class="event-date">June</div>
+        </div>
+      </div>
+      <div class="event-desc">
+        School-wide celebration with games, performances, art booths, and a talent show. Families and teachers honor student achievements and growth.
+      </div>
+      <div class="event-gallery">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Carnival">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Talent Show">
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer-section">
+    <div class="container">
+      <h6>Get In Touch!</h6>
+      <p><strong>Phone:</strong> +01 123467890 | <strong>Email:</strong> info@oiniaelementary.edu</p>
+      <div>
+        <span>Follow us:</span>
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+      <div class="mt-2"><small>&copy; 2025 Oinia Elementary School. All Rights Reserved.</small></div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

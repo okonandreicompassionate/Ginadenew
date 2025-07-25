@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | Oinia Elementary School</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root {
+      --primary: #4e9af1;
+      --accent: #ffd166;
+      --glass: rgba(255,255,255,0.65);
+      --glass-border: rgba(76, 173, 255, 0.23);
+      --heading: 'Playfair Display', serif;
+      --body: 'Nunito', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--body);
+      background: linear-gradient(120deg, #e3f0ff 0%, #f8fbff 100%);
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--heading);
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .navbar {
+      background: var(--glass)!important;
+      border-bottom: 2px solid var(--glass-border);
+      box-shadow: 0 2px 16px var(--glass-border);
+    }
+    .navbar-brand, .nav-link {
+      color: var(--primary)!important;
+      font-weight: 600;
+      font-family: var(--heading);
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    .nav-link.active, .nav-link:hover {
+      color: #1877f2!important;
+      background: var(--glass);
+      border-radius: 10px;
+      padding: 0.4em 0.9em;
+    }
+    .register-section {
+      max-width: 500px;
+      margin: 3em auto 1em auto;
+      background: var(--glass);
+      border-radius: 22px;
+      box-shadow: 0 8px 32px var(--glass-border);
+      padding: 2em 2em 1em 2em;
+      animation: fadeInUp 1.2s;
+    }
+    .register-section h2 {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.6em;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px #4e9af133;
+    }
+    .register-section p {
+      font-size: 1.15em;
+      font-weight: 500;
+      color: #155fa2;
+      margin-bottom: 1.3em;
+      text-align: center;
+    }
+    .form-label {
+      font-weight: 600;
+      color: #1877f2;
+      margin-bottom: 0.2em;
+    }
+    .form-control, .form-select {
+      border-radius: 8px;
+      border: 1.5px solid var(--glass-border);
+      font-size: 1.06em;
+      box-shadow: 0 1px 6px #4e9af133;
+      margin-bottom: 1.1em;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 2px 12px #4e9af166;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #4e9af1 0%, #ffd166 100%);
+      border: none;
+      font-weight: bold;
+      font-size: 1.09em;
+      box-shadow: 0 2px 12px #4e9af166;
+      border-radius: 10px;
+      padding: 0.6em 2em;
+      transition: background .2s;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #1877f2 0%, #ffd166 100%);
+    }
+    .contact-info {
+      margin-top: 2.2em;
+      padding: 1em 0.6em;
+      background: var(--glass);
+      border-radius: 14px;
+      box-shadow: 0 1px 8px var(--glass-border);
+      text-align: center;
+      font-size: 1.08em;
+      animation: fadeIn 1.1s;
+    }
+    .contact-info strong {
+      color: var(--primary);
+    }
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .register-section {
+        max-width: 98vw;
+        padding: 1em 0.2em 0.5em 0.2em;
+      }
+      .register-section h2 {font-size:1.15em;}
+      .contact-info {font-size:0.97em;}
+    }
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+  </style>
+</head>
+<body>
+    <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=80" alt="School Logo">
+        Oinia Elementary
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-2 gap-1">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link active" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="register-section animate__animated animate__fadeInUp">
+    <h2>Register Your Interest</h2>
+    <p>Ready to join our joyful learning community? Fill out the form below and we'll reach out to you soon!</p>
+    <form action="mailto:okoncompassionate@gmail.com" method="POST" enctype="text/plain">
+      <div class="mb-3">
+        <label for="parentName" class="form-label">Your Full Name</label>
+        <input type="text" class="form-control" id="parentName" name="Parent Name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email Address</label>
+        <input type="email" class="form-control" id="email" name="Email" required>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Contact Phone</label>
+        <input type="tel" class="form-control" id="phone" name="Phone">
+      </div>
+      <div class="mb-3">
+        <label for="numChildren" class="form-label">Number of Children</label>
+        <select class="form-select" id="numChildren" name="Number of Children" required>
+          <option value="">Select...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4+">4 or more</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="childNames" class="form-label">Children's Names & Ages</label>
+        <textarea class="form-control" id="childNames" name="Children Names & Ages" rows="2" placeholder="e.g. Anna (8), Max (5)" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="interest" class="form-label">Programs of Interest</label>
+        <select class="form-select" id="interest" name="Programs Interested In" multiple>
+          <option value="Academic Excellence">Academic Excellence</option>
+          <option value="Arts & Creativity">Arts & Creativity</option>
+          <option value="Sports & Wellbeing">Sports & Wellbeing</option>
+          <option value="Clubs & Community">Clubs & Community</option>
+          <option value="Support Services">Support Services</option>
+        </select>
+        <small class="text-muted">Hold Ctrl/Command to select multiple.</small>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Any Questions or Notes?</label>
+        <textarea class="form-control" id="message" name="Message" rows="2" placeholder="Tell us about your child or ask anything!"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Send Registration</button>
+    </form>
+    <div class="contact-info mt-4 animate__animated animate__fadeIn">
+      <strong>Questions?</strong> <br>
+      Email us at <a href="mailto:info@oiniaelementary.edu">info@oiniaelementary.edu</a> <br>
+      Or call <strong>+01 123467890</strong> <br>
+      We're here to help!
+    </div>
+  </section>
+  <footer class="footer-section">
+    <div class="container">
+      <h6>Get In Touch!</h6>
+      <p><strong>Phone:</strong> +01 123467890 | <strong>Email:</strong> info@oiniaelementary.edu</p>
+      <div>
+        <span>Follow us:</span>
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+      <div class="mt-2"><small>&copy; 2025 Oinia Elementary School. All Rights Reserved.</small></div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

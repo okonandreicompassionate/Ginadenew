@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Oinia Elementary School</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root { --primary: #4e9af1; --accent: #ffd166; --glass: rgba(255,255,255,0.45); --glass-border: rgba(76, 173, 255, 0.13); --heading: 'Playfair Display', serif; --body: 'Nunito', Arial, sans-serif; }
+    body { font-family: var(--body); background: linear-gradient(130deg, #e3f0ff 0%, #f8fbff 100%); min-height: 100vh; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--heading); letter-spacing: 0.5px; }
+    .navbar { background: var(--glass)!important; border-bottom: 2px solid var(--glass-border); box-shadow: 0 2px 16px var(--glass-border);}
+    .navbar-brand, .nav-link { color: var(--primary)!important; font-weight: 600; font-family: var(--heading);}
+    .navbar-brand img { height: 32px; margin-right: 0.5em;}
+    .nav-link.active, .nav-link:hover { color: #1877f2!important; background: var(--glass); border-radius: 10px; padding: 0.4em 0.9em;}
+    .about-section { background: var(--glass); border-radius: 18px; border: 1px solid var(--glass-border); padding: 2em 1.2em; margin: 2em auto 1em; box-shadow: 0 4px 18px var(--glass-border); max-width: 900px; animation: fadeInUp 1.2s; display: flex; flex-wrap: wrap; gap:2em; align-items: flex-start;}
+    .about-left, .about-right { flex: 1 1 320px; min-width: 260px; }
+    .about-img { width: 100%; max-width: 340px; border-radius: 16px; box-shadow: 0 2px 16px var(--glass-border); margin-bottom: 1em; animation: zoomIn 1s; }
+    .about-section h2 { font-size: 2em;}
+    .about-section ul { font-size: 1.12em; margin-bottom: 1.5em;}
+    .about-highlight { font-size: 1.12em; font-weight: 600; color: var(--primary); margin-bottom: 1.2em; }
+    .about-bio-box {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #4e9af133;
+      padding: 1.2em 1em;
+      margin-bottom: 1em;
+      animation: fadeIn 1.3s;
+    }
+    .about-bio-title { font-size: 1.07em; font-weight: bold; color: #1877f2; margin-bottom: 0.3em;}
+    .about-bio-img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 0.6em;
+      border: 2px solid var(--accent);
+      box-shadow: 0 2px 12px #ffd16633;
+      float: left;
+      margin-right: 1em;
+    }
+    .about-bio-text { font-size: 1em; color: #333c55;}
+    .about-values-list li::before { content: "★ "; color: var(--accent); font-size:1em;}
+    .about-history {
+      background: var(--glass);
+      border-radius: 10px;
+      padding: 1em 1em 0.7em;
+      margin-bottom: 1em;
+      font-size: 1.05em;
+      box-shadow: 0 2px 10px #4e9af122;
+      animation: fadeInUp 1.3s;
+    }
+    .about-gallery-row {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1em;
+      animation: fadeInUp 1.2s;
+    }
+    .about-gallery-img {
+      width: 130px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #4e9af133;
+    }
+    .about-quote {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #1877f2;
+      text-align: center;
+      margin: 1.2em 0 0.8em 0;
+      font-style: italic;
+      animation: fadeIn 1.2s;
+    }
+    .footer-section { background: linear-gradient(90deg, #4e9af1 0%, #4286d4 100%); color: #fff; border-top: 2px solid var(--glass-border); padding: 1.2em 0 0.6em; margin-top: 1.5em; border-radius: 16px 16px 0 0; text-align: center; font-family: var(--heading); font-size: 0.97em;}
+    .footer-section a { color: #ffd166; text-decoration: underline;}
+    @media (max-width: 900px) {
+      .about-section{padding:1em 0.3em; flex-direction:column;}
+      .about-left, .about-right { min-width: 99vw; }
+      .about-section h2 {font-size:1.5em;}
+    }
+    @media (max-width: 600px) {
+      .about-section{padding:0.7em 0.1em;}
+      .about-img { max-width: 99vw; }
+      .about-gallery-img { width: 80px; height: 56px;}
+      .about-bio-img { width: 50px; height: 50px;}
+      .footer-section { font-size: 0.83em; }
+    }
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes zoomIn {from{opacity:0;transform:scale(.8);}to{opacity:1;transform:scale(1);}}
+    @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=80" alt="School Logo">
+        Oinia Elementary
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-2 gap-1">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- About Section -->
+  <section class="about-section container">
+    <div class="about-left">
+      <img src="https://img.freepik.com/free-photo/university-campus-school_1150-11061.jpg?w=350" class="about-img img-fluid d-block mx-auto" alt="School Building">
+      <div class="about-gallery-row">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=350&q=80" class="about-gallery-img" alt="Playground">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=350&q=80" class="about-gallery-img" alt="Art Class">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=350&q=80" class="about-gallery-img" alt="Library">
+      </div>
+      <div class="about-quote">“At Oinia, every child belongs and every day is a new adventure.”</div>
+    </div>
+    <div class="about-right">
+      <h2 class="fw-bold text-center mb-2">About Oinia Elementary</h2>
+      <div class="about-highlight text-center">Founded in 1987 · 420+ happy students · 8-acre green campus</div>
+      <div class="about-history">
+        <strong>Our Story:</strong> Oinia Elementary began as a dream to build a school where every child feels valued and inspired. Over the decades, we've grown into a thriving community where innovation meets tradition, and learning feels like play.
+      </div>
+      <ul class="about-values-list mb-3">
+        <li>Experienced, caring educators</li>
+        <li>Small class sizes for personal attention</li>
+        <li>Modern classrooms and STEM labs</li>
+        <li>Creative arts, music, and sports programs</li>
+        <li>Support services for all learners</li>
+        <li>Active family and community partnerships</li>
+      </ul>
+      <div class="about-bio-box clearfix">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Principal" class="about-bio-img">
+        <div class="about-bio-title">From the Principal: Ms. Emily Carter</div>
+        <div class="about-bio-text">
+          “At Oinia, we believe in the power of curiosity and kindness. Our teachers are dedicated to creating a safe, joyful space where children can discover their strengths, ask big questions, and make lifelong friends. We invite families to join us on this journey and help every child shine.”
+        </div>
+      </div>
+      <div class="about-bio-box clearfix">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Founder" class="about-bio-img">
+        <div class="about-bio-title">Founder: Mr. Thomas Oinia</div>
+        <div class="about-bio-text">
+          “We started Oinia Elementary with a vision: to create a school where learning is joyful, every child is known, and talents are celebrated. Our mission continues today, as we grow, adapt, and nurture the next generation of dreamers and doers.”
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer-section">
+    <div class="container">
+      <h6>Get In Touch!</h6>
+      <p><strong>Phone:</strong> +01 123467890 | <strong>Email:</strong> info@oiniaelementary.edu</p>
+      <div>
+        <span>Follow us:</span>
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+      <div class="mt-2"><small>&copy; 2025 Oinia Elementary School. All Rights Reserved.</small></div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

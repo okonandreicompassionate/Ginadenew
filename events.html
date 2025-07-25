@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events | Oinia Elementary School</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root {
+      --primary: #4e9af1;
+      --accent: #ffd166;
+      --glass: rgba(255,255,255,0.45);
+      --glass-border: rgba(76, 173, 255, 0.13);
+      --heading: 'Playfair Display', serif;
+      --body: 'Nunito', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--body);
+      background: linear-gradient(120deg, #e3f0ff 0%, #f8fbff 100%);
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--heading);
+      letter-spacing: 0.5px;
+    }
+    .navbar {
+      background: var(--glass)!important;
+      border-bottom: 2px solid var(--glass-border);
+      box-shadow: 0 2px 16px var(--glass-border);
+    }
+    .navbar-brand, .nav-link {
+      color: var(--primary)!important;
+      font-weight: 600;
+      font-family: var(--heading);
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    .nav-link.active, .nav-link:hover {
+      color: #1877f2!important;
+      background: var(--glass);
+      border-radius: 10px;
+      padding: 0.4em 0.9em;
+    }
+    .events-header {
+      text-align: center;
+      background: linear-gradient(90deg, #4e9af1 0%, #ffd166 100%);
+      color: #fff;
+      padding: 2.2em 0 1em 0;
+      border-radius: 0 0 36px 36px;
+      box-shadow: 0 2px 20px var(--glass-border);
+      margin-bottom: 2em;
+      animation: fadeInDown 1.1s;
+      position: relative;
+      z-index: 1;
+    }
+    .events-header h2 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 16px #4e9af122;
+    }
+    .events-header p {
+      font-size: 1.2em;
+      font-weight: 500;
+      margin-bottom: 0.8em;
+      color: #1877f2;
+      text-shadow: 0 1px 8px #ffd16666;
+    }
+    .confetti {
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      z-index: 2;
+      background: url('https://cdn.pixabay.com/photo/2016/04/01/10/12/confetti-1293314_1280.png') center repeat-x;
+      opacity: 0.8;
+      animation: confettiMove 3s linear infinite;
+    }
+    @keyframes confettiMove {
+      0% {background-position-x: 0;}
+      100% {background-position-x: 200px;}
+    }
+    .events-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em 1.5em;
+      justify-content: center;
+    }
+    .event-card {
+      background: var(--glass);
+      border-radius: 18px;
+      border: 2px solid var(--glass-border);
+      box-shadow: 0 4px 24px var(--glass-border);
+      width: 340px;
+      min-width: 220px;
+      max-width: 99vw;
+      padding: 1.3em 1em 1em 1em;
+      text-align: center;
+      animation: fadeInUp 1s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .event-card:hover {
+      box-shadow: 0 12px 38px var(--glass-border);
+      transform: scale(1.05) translateY(-5px);
+      z-index: 2;
+    }
+    .event-img {
+      width: 100%;
+      max-width: 260px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #ffd16655;
+      margin-bottom: 0.8em;
+      animation: zoomIn 1.1s;
+    }
+    .event-title {
+      font-size: 1.35em;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.2em;
+      letter-spacing: 0.8px;
+    }
+    .event-date {
+      font-size: 1.07em;
+      color: #1877f2;
+      font-weight: 600;
+      margin-bottom: 0.3em;
+    }
+    .event-desc {
+      font-size: 1.05em;
+      color: #333c55;
+      margin-bottom: 0.4em;
+    }
+    .event-badge {
+      background: var(--accent);
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.96em;
+      border-radius: 7px;
+      padding: 0.25em 0.8em;
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      box-shadow: 0 2px 6px #ffd16655;
+      letter-spacing: 1px;
+    }
+    .event-link {
+      margin-top: 0.6em;
+      display: inline-block;
+      font-weight: 600;
+      color: #1877f2;
+      background: var(--accent);
+      border-radius: 6px;
+      padding: 0.18em 0.8em;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .event-link:hover {
+      background: #4e9af1;
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .events-header h2 {font-size:1.7em;}
+      .events-list {gap:1.1em;}
+      .event-card {width:96vw;}
+      .event-img {height:90px;}
+    }
+    @media (max-width: 600px) {
+      .events-header {padding:1.1em 0 0.5em;}
+      .events-header h2 {font-size:1.2em;}
+      .event-card {padding:0.7em 0.3em;}
+      .event-img {height:64px;}
+      .footer-section { font-size: 0.83em; }
+    }
+    @keyframes fadeInDown {from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes zoomIn {from{opacity:0;transform:scale(.8);}to{opacity:1;transform:scale(1);}}
+    .footer-section {
+      background: linear-gradient(90deg, #4e9af1 0%, #4286d4 100%);
+      color: #fff;
+      border-top: 2px solid var(--glass-border);
+      padding: 1.2em 0 0.6em;
+      margin-top: 1.5em;
+      border-radius: 16px 16px 0 0;
+      text-align: center;
+      font-family: var(--heading);
+      font-size: 0.97em;
+    }
+    .footer-section a {
+      color: #ffd166;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+   <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=80" alt="School Logo">
+        Oinia Elementary
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-2 gap-1">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="events-header animate__animated animate__fadeInDown">
+    <div class="confetti"></div>
+    <h2>Term Events & Activities</h2>
+    <p>Don't miss out! Here’s what’s happening this term at Oinia Elementary.<br>
+      Fun, friends, creativity and adventure all around campus.</p>
+  </div>
+  <section class="events-list">
+    <!-- Event 1 -->
+    <div class="event-card animate__animated animate__fadeInUp">
+      <span class="event-badge">NEW!</span>
+      <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Back to School Bash">
+      <div class="event-title">Back to School Bash</div>
+      <div class="event-date">Monday, Sep 1</div>
+      <div class="event-desc">Kick off the term with music, games, inflatables, snacks and a teacher dunk tank! Meet your classmates and explore our campus together.</div>
+      <a class="event-link" href="#">Details</a>
+    </div>
+    <!-- Event 2 -->
+    <div class="event-card animate__animated animate__fadeInUp">
+      <span class="event-badge">FAMILY</span>
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Family Picnic">
+      <div class="event-title">Family Picnic Day</div>
+      <div class="event-date">Saturday, Sep 13</div>
+      <div class="event-desc">Bring your loved ones for an afternoon of food trucks, face painting, relay races, and a giant bubble show!</div>
+      <a class="event-link" href="#">Details</a>
+    </div>
+    <!-- Event 3 -->
+    <div class="event-card animate__animated animate__fadeInUp">
+      <span class="event-badge">ART</span>
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Art Week">
+      <div class="event-title">Creative Arts Week</div>
+      <div class="event-date">Sept 22 - Sept 26</div>
+      <div class="event-desc">Explore painting, music, dance, and crafts. Daily workshops led by guest artists and a student talent show on Friday!</div>
+      <a class="event-link" href="#">Details</a>
+    </div>
+    <!-- Event 4 -->
+    <div class="event-card animate__animated animate__fadeInUp">
+      <span class="event-badge">SPORTS</span>
+      <img src="https://images.unsplash.com/photo-1519864600265-abb224a4bfa3?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Sports Festival">
+      <div class="event-title">Sports Festival</div>
+      <div class="event-date">Thursday, Oct 10</div>
+      <div class="event-desc">Team spirit, races, soccer tournament, obstacle course, and trophies! Wear your house colors and cheer your friends.</div>
+      <a class="event-link" href="#">Details</a>
+    </div>
+    <!-- Event 5 -->
+    <div class="event-card animate__animated animate__fadeInUp">
+      <span class="event-badge">STEM</span>
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=350&q=80" class="event-img" alt="STEM Science Fair">
+      <div class="event-title">STEM Science Fair</div>
+      <div class="event-date">Wednesday, Oct 22</div>
+      <div class="event-desc">Design, build, and showcase your own science project. Prizes for creativity, teamwork, and innovation!</div>
+      <a class="event-link" href="#">Details</a>
+    </div>
+    <!-- Event 6 -->
+    <div class="event-card animate__animated animate__fadeInUp">
+      <span class="event-badge">FUN</span>
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Fall Festival">
+      <div class="event-title">Fall Festival & Parade</div>
+      <div class="event-date">Friday, Oct 31</div>
+      <div class="event-desc">Carnival games, pumpkin decorating, costume parade, and sweet treats for all! Parents invited for the parade.</div>
+      <a class="event-link" href="#">Details</a>
+    </div>
+    <!-- Event 7 -->
+    <div class="event-card animate__animated animate__fadeInUp">
+      <span class="event-badge">COMMUNITY</span>
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=350&q=80" class="event-img" alt="Community Service Day">
+      <div class="event-title">Community Service Day</div>
+      <div class="event-date">Saturday, Nov 15</div>
+      <div class="event-desc">Join us to help beautify our school garden, make care packages, and donate books to local charities. All ages welcome!</div>
+      <a class="event-link" href="#">Details</a>
+    </div>
+    <!-- Add more events as needed! -->
+  </section>
+  <footer class="footer-section">
+    <div class="container">
+      <h6>Get In Touch!</h6>
+      <p><strong>Phone:</strong> +01 123467890 | <strong>Email:</strong> info@oiniaelementary.edu</p>
+      <div>
+        <span>Follow us:</span>
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+      <div class="mt-2"><small>&copy; 2025 Oinia Elementary School. All Rights Reserved.</small></div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

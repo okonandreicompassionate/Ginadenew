@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oinia Elementary School - Home</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root {
+      --primary: #4e9af1;
+      --accent: #ffd166;
+      --glass: rgba(255,255,255,0.45);
+      --glass-border: rgba(76, 173, 255, 0.13);
+      --heading: 'Playfair Display', serif;
+      --body: 'Nunito', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--body);
+      background: linear-gradient(130deg, #e3f0ff 0%, #f8fbff 100%);
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--heading);
+      letter-spacing: 0.5px;
+    }
+    .navbar {
+      background: var(--glass)!important;
+      border-bottom: 2px solid var(--glass-border);
+      box-shadow: 0 2px 16px var(--glass-border);
+    }
+    .navbar-brand, .nav-link {
+      color: var(--primary)!important;
+      font-weight: 600;
+      font-family: var(--heading);
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    .nav-link.active, .nav-link:hover {
+      color: #1877f2!important;
+      background: var(--glass);
+      border-radius: 10px;
+      padding: 0.4em 0.9em;
+    }
+    /* Banner */
+    .banner-section {
+      background: url('https://img.freepik.com/free-photo/group-children-school_23-2148142316.jpg?w=800') center center/cover;
+      color: #fff;
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      border-radius: 0 0 24px 24px;
+      position: relative;
+      font-family: var(--heading);
+      margin-bottom: 1em;
+    }
+    .banner-glass {
+      background: var(--glass);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      border: 2px solid var(--glass-border);
+      padding: 1.2em 1em 0.7em;
+      max-width: 350px;
+      margin: 2em auto;
+      box-shadow: 0 6px 18px var(--glass-border);
+      animation: fadeInDown 1.1s;
+    }
+    .banner-glass h1 { font-size: 1.5em; }
+    .banner-glass p { font-size: 1em; }
+    /* Features */
+    .features-section { margin-top: 1.5em; }
+    .features-card {
+      background: var(--glass);
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 2px 8px var(--glass-border);
+      padding: 1em;
+      margin-bottom: 1.1em;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInUp 1s;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .features-card:hover {
+      box-shadow: 0 8px 18px var(--glass-border);
+      transform: scale(1.04) translateY(-4px);
+    }
+    .feature-icon {
+      width: 38px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: var(--accent);
+      padding: 0.3em;
+      box-shadow: 0 2px 7px #ffd16633;
+      animation: zoomIn 1.1s;
+    }
+    /* About */
+    .about-section {
+      background: var(--glass);
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      padding: 1em 0.7em;
+      margin: 2em auto 1em;
+      box-shadow: 0 2px 12px var(--glass-border);
+      max-width: 700px;
+      animation: fadeInUp 1.2s;
+    }
+    .about-img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 9px var(--glass-border);
+      margin-bottom: 1em;
+      animation: zoomIn 1s;
+    }
+    .about-section h2 { font-size: 1.3em; }
+    .about-section ul { font-size: 0.98em; }
+    /* Programs */
+    .program-section {
+      margin: 2em 0 1em;
+    }
+    .program-card {
+      background: var(--glass);
+      border-radius: 14px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 2px 10px var(--glass-border);
+      padding: 1em 0.5em;
+      margin-bottom: 1em;
+      min-height: 120px;
+      animation: fadeInUp 1s;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .program-card:hover {
+      box-shadow: 0 6px 18px var(--glass-border);
+      transform: scale(1.04) translateY(-3px);
+    }
+    .program-icon {
+      width: 28px;
+      margin-bottom: 7px;
+      animation: zoomIn 1s;
+    }
+    /* Events */
+    .events-section { margin-bottom: 1em; }
+    .event-card {
+      background: var(--glass);
+      border-radius: 14px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 2px 8px var(--glass-border);
+      margin-bottom: 1em;
+      overflow: hidden;
+      min-height: 120px;
+      animation: fadeInUp 1s;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .event-card:hover {
+      box-shadow: 0 8px 18px var(--glass-border);
+      transform: scale(1.04) translateY(-3px);
+    }
+    .event-img {
+      width: 100%;
+      height: 85px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0;
+      animation: zoomIn 1s;
+    }
+    /* Map */
+    .map-section {
+      margin: 2em 0 1em;
+      padding-bottom: 1em;
+      background: var(--glass);
+      border-radius: 14px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 2px 10px var(--glass-border);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s;
+    }
+    /* Footer */
+    .footer-section {
+      background: linear-gradient(90deg, #4e9af1 0%, #4286d4 100%);
+      color: #fff;
+      border-top: 2px solid var(--glass-border);
+      padding: 1.2em 0 0.6em;
+      margin-top: 1.5em;
+      border-radius: 16px 16px 0 0;
+      text-align: center;
+      font-family: var(--heading);
+      font-size: 0.97em;
+    }
+    .footer-section a {
+      color: #ffd166;
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .banner-glass, .about-section, .program-section, .events-section, .map-section {
+        padding: 0.7em 0.3em;
+        margin: 0.7em auto;
+      }
+    }
+    @media (max-width: 600px) {
+      .banner-section { min-height: 90px; }
+      .banner-glass { max-width: 99vw; padding: 0.4em 0.2em; }
+      .features-section, .about-section, .program-section, .events-section, .map-section { padding: 0.4em 0.1em; }
+      .features-card, .program-card, .event-card { min-height: 80px; padding: 0.4em; }
+      .footer-section { font-size: 0.83em; }
+    }
+    @keyframes fadeInDown { from { opacity:0; transform:translateY(-30px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes zoomIn { from { opacity:0; transform:scale(.8);} to{opacity:1;transform:scale(1);} }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=80" alt="School Logo">
+        Oinia Elementary
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-2 gap-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <section class="banner-section mb-3">
+    <div class="container">
+      <div class="banner-glass shadow text-center mx-auto animate__animated animate__fadeInDown">
+        <h1 class="fw-bold mb-2">Welcome to Oinia Elementary School</h1>
+        <p class="mb-2">
+          Where learning is a joyful journey! <br>
+          Our vibrant campus is a place where children are inspired, nurtured, and challenged to reach their full potential.
+        </p>
+        <a href="#" class="btn btn-sm btn-warning fw-bold px-3 my-1">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features-section container mt-2">
+    <h2 class="mb-3 text-center fw-semibold animate__animated animate__fadeInDown">Our Values</h2>
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/teacher_318-154288.jpg?w=60" alt="Caring Staff" class="feature-icon">
+          <h5 class="fw-bold mb-1">Caring Staff</h5>
+          <p>Teachers dedicated to well-being & success.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/safety_318-177927.jpg?w=60" alt="Safe Environment" class="feature-icon">
+          <h5 class="fw-bold mb-1">Safe Environment</h5>
+          <p>Secure campus & friendly learning space.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/art_318-177922.jpg?w=60" alt="Creativity & Play" class="feature-icon">
+          <h5 class="fw-bold mb-1">Creativity & Play</h5>
+          <p>Art, music, and play for holistic growth.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/parent_318-177921.jpg?w=60" alt="Family Partnership" class="feature-icon">
+          <h5 class="fw-bold mb-1">Family Partnership</h5>
+          <p>Events & updates for the whole family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section container">
+    <img src="https://img.freepik.com/free-photo/university-campus-school_1150-11061.jpg?w=350" class="about-img img-fluid d-block mx-auto" alt="School Building">
+    <h2 class="fw-bold text-center mb-2">About Oinia Elementary</h2>
+    <p class="text-center mb-2">
+      Oinia Elementary is a vibrant, inclusive community for ages 5-12. We blend academics, social-emotional learning, arts, and play. Our campus has modern classrooms and safe outdoor spaces.
+    </p>
+    <ul class="mb-2">
+      <li>Certified, caring educators</li>
+      <li>Small class sizes</li>
+      <li>STEM, arts, and PE programs</li>
+      <li>Support services for all learners</li>
+      <li>Fun events all year!</li>
+    </ul>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="container">
+    <h2 class="mb-3 text-center fw-semibold">Our Programs</h2>
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-4">
+        <div class="program-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/book_318-154277.jpg?w=48" alt="Academic" class="program-icon">
+          <h5 class="fw-bold mb-1">Academic Excellence</h5>
+          <p>Literacy, math, science, and more.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="program-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/art_318-177922.jpg?w=48" alt="Arts" class="program-icon">
+          <h5 class="fw-bold mb-1">Arts & Creativity</h5>
+          <p>Art, music, performances & projects.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="program-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/soccer_318-177928.jpg?w=48" alt="Sports" class="program-icon">
+          <h5 class="fw-bold mb-1">Sports & Wellbeing</h5>
+          <p>PE, team sports, and health.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="program-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/psychology_318-177929.jpg?w=48" alt="Support" class="program-icon">
+          <h5 class="fw-bold mb-1">Counseling & Support</h5>
+          <p>Guidance & inclusion for all.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="program-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-icon/parent_318-177921.jpg?w=48" alt="Community" class="program-icon">
+          <h5 class="fw-bold mb-1">Community & Clubs</h5>
+          <p>After-school, leadership, service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events-section container">
+    <h2 class="mb-3 text-center fw-semibold">Events & Activities</h2>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-4">
+        <div class="event-card animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-photo/group-young-people-celebrate_23-2148906851.jpg?w=600" class="event-img" alt="Science Fair">
+          <div class="p-2">
+            <h5 class="fw-bold mb-1">Science & Art Fair</h5>
+            <p>Sep 15, 2025</p>
+            <p>Creative displays & hands-on activities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="event-card animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-photo/group-children-school_23-2148142316.jpg?w=600" class="event-img" alt="Sports Day">
+          <div class="p-2">
+            <h5 class="fw-bold mb-1">Sports Day</h5>
+            <p>Oct 10, 2025</p>
+            <p>Races, relays, teamwork prizes!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="event-card animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-photo/children-halloween-party_23-2148131374.jpg?w=600" class="event-img" alt="Fall Festival">
+          <div class="p-2">
+            <h5 class="fw-bold mb-1">Fall Festival & Parade</h5>
+            <p>Oct 28, 2025</p>
+            <p>Games, crafts & costume parade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="#" class="btn btn-sm btn-outline-primary fw-bold px-3">More Events</a>
+    </div>
+  </section>
+   <!-- ...all previous code above stays the same -->
+
+  <!-- Meet The Staff Section (Preview) -->
+  <section class="container mt-3">
+    <h2 class="mb-3 text-center fw-semibold animate__animated animate__fadeInDown">Meet The Staff</h2>
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-photo/portrait-happy-teacher_23-2147636926.jpg?w=80" alt="Ms. Emily Carter" class="feature-icon">
+          <h5 class="fw-bold mb-1">Ms. Emily Carter</h5>
+          <p>Principal</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-photo/young-male-teacher-school_23-2147704849.jpg?w=80" alt="Mr. John Nguyen" class="feature-icon">
+          <h5 class="fw-bold mb-1">Mr. John Nguyen</h5>
+          <p>Grade 4 Teacher</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-photo/portrait-young-female-teacher_23-2147636927.jpg?w=80" alt="Ms. Sarah Lopez" class="feature-icon">
+          <h5 class="fw-bold mb-1">Ms. Sarah Lopez</h5>
+          <p>Art & Music</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="features-card text-center animate__animated animate__fadeInUp">
+          <img src="https://img.freepik.com/free-photo/happy-female-teacher-elementary_23-2147704846.jpg?w=80" alt="Mrs. Linda Smith" class="feature-icon">
+          <h5 class="fw-bold mb-1">Mrs. Linda Smith</h5>
+          <p>School Counselor</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <a href="staff.html" class="btn btn-sm btn-outline-primary fw-bold px-3">See All Staff</a>
+    </div>
+  </section>
+
+<!-- ...all following code (footer, etc.) stays the same -->
+
+  <!-- Map Section -->
+  <section class="map-section my-3 mt-5" >
+    <h2 class="mb-2 text-center fw-bold">Find Us</h2>
+    <div class="row align-items-center">
+      <div class="col-12 mb-2">
+        <div class="ps-1 text-center">
+          <h6 class="mb-1">Oinia Elementary School</h6>
+          <p>
+            <strong>Address:</strong> 123 Education Rd, Cityville<br>
+            <strong>Phone:</strong> +01 123467890<br>
+            <strong>Email:</strong> info@oiniaelementary.edu
+          </p>
+          <small>Mon-Fri: 8am-4pm | Sat: 9am-12pm</small>
+        </div>
+      </div>
+      <div class="col-12">
+        <div style="border-radius:12px;overflow:hidden;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093745!2d144.9559283153165!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5777c8b2d9b6ed!2sEducation%20Road!5e0!3m2!1sen!2sau!4v1623456789012"
+            width="100%" height="130" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section mt-5">
+    <div class="container">
+      <h6>Get In Touch!</h6>
+      <p>
+        <strong>Phone:</strong> +01 123467890 |
+        <strong>Email:</strong> info@oiniaelementary.edu
+      </p>
+      <div>
+        <span>Follow us:</span>
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+      <div class="mt-2">
+        <small>&copy; 2025 Oinia Elementary School. All Rights Reserved.</small>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

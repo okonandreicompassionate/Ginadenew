@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact | Oinia Elementary School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root {
+      --primary: #4e9af1;
+      --accent: #ffd166;
+      --glass: rgba(255,255,255,0.65);
+      --glass-border: rgba(76, 173, 255, 0.23);
+      --heading: 'Playfair Display', serif;
+      --body: 'Nunito', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--body);
+      background: linear-gradient(120deg, #e3f0ff 0%, #f8fbff 100%);
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--heading);
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .navbar {
+      background: var(--glass)!important;
+      border-bottom: 2px solid var(--glass-border);
+      box-shadow: 0 2px 16px var(--glass-border);
+    }
+    .navbar-brand, .nav-link {
+      color: var(--primary)!important;
+      font-weight: 600;
+      font-family: var(--heading);
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    .nav-link.active, .nav-link:hover {
+      color: #1877f2!important;
+      background: var(--glass);
+      border-radius: 10px;
+      padding: 0.4em 0.9em;
+    }
+    .contact-section {
+      max-width: 650px;
+      margin: 3em auto 1em auto;
+      background: var(--glass);
+      border-radius: 22px;
+      box-shadow: 0 8px 32px var(--glass-border);
+      padding: 2em 2em 1em 2em;
+      animation: fadeInUp 1.2s;
+    }
+    .contact-section h2 {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.6em;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px #4e9af133;
+    }
+    .contact-list {
+      margin-top: 1.6em;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.98);
+      border-radius: 14px;
+      box-shadow: 0 2px 10px var(--glass-border);
+      margin-bottom: 1.3em;
+      padding: 1.1em 1em 1em 1em;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2em;
+      animation: fadeIn 1s;
+    }
+    .contact-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 11px;
+      background: var(--accent);
+      box-shadow: 0 2px 7px #ffd16633;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-details {
+      flex: 1 1 auto;
+    }
+    .contact-label {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.08em;
+      margin-bottom: 0.1em;
+    }
+    .contact-info {
+      font-size: 1.06em;
+      color: #155fa2;
+      margin-bottom: 0.2em;
+      word-break: break-word;
+    }
+    .contact-info a {
+      color: #1877f2;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .contact-extra {
+      font-size: 0.97em;
+      color: #333c55;
+      margin-top: 0.2em;
+    }
+    .social-row {
+      display: flex;
+      gap: 1.1em;
+      margin-top: 1.3em;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-row a img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #ffd16644;
+      transition: transform .2s;
+    }
+    .social-row a:hover img {
+      transform: scale(1.12) rotate(-7deg);
+    }
+    @media (max-width: 600px) {
+      .contact-section {
+        max-width: 98vw;
+        padding: 1em 0.2em 0.5em 0.2em;
+      }
+      .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6em;
+      }
+      .contact-icon {
+        width: 32px;
+        height: 32px;
+      }
+      .contact-section h2 {font-size:1.15em;}
+      .contact-info {font-size:1em;}
+      .contact-label {font-size:1em;}
+      .footer-section {font-size:0.83em;}
+    }
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+    .footer-section {
+      background: linear-gradient(90deg, #4e9af1 0%, #4286d4 100%);
+      color: #fff;
+      border-top: 2px solid var(--glass-border);
+      padding: 1.2em 0 0.6em;
+      margin-top: 1.5em;
+      border-radius: 16px 16px 0 0;
+      text-align: center;
+      font-family: var(--heading);
+      font-size: 0.97em;
+    }
+    .footer-section a {
+      color: #ffd166;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=80" alt="School Logo">
+        Oinia Elementary
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-2 gap-1">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="contact-section animate__animated animate__fadeInUp">
+    <h2>Contact Us</h2>
+    <div class="contact-list">
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/phone.png" alt="Phone" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">Main Office</div>
+          <div class="contact-info"><a href="tel:+01123467890">+01 123467890</a></div>
+          <div class="contact-extra">Call us for questions, absences, or general info.</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/email-open.png" alt="Email" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">General Email</div>
+          <div class="contact-info"><a href="mailto:info@oiniaelementary.edu">info@oiniaelementary.edu</a></div>
+          <div class="contact-extra">General inquiries, admissions, and registration.</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/teacher.png" alt="Principal" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">Principal: Ms. Emily Carter</div>
+          <div class="contact-info"><a href="mailto:emily.carter@oiniaelementary.edu">emily.carter@oiniaelementary.edu</a></div>
+          <div class="contact-extra">Direct line for leadership, school vision, and concerns.</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/counselor.png" alt="Counselor" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">School Counselor: Mrs. Linda Smith</div>
+          <div class="contact-info"><a href="mailto:linda.smith@oiniaelementary.edu">linda.smith@oiniaelementary.edu</a></div>
+          <div class="contact-extra">For wellbeing, support, and family resources.</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/library.png" alt="Library" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">Library & Clubs</div>
+          <div class="contact-info"><a href="mailto:alex.turner@oiniaelementary.edu">alex.turner@oiniaelementary.edu</a></div>
+          <div class="contact-extra">Questions about books, clubs, and after-school activities.</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/address.png" alt="Address" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">Address</div>
+          <div class="contact-info">123 Oinia Ave, Greenfield, Country</div>
+          <div class="contact-extra"><a href="https://goo.gl/maps/dummy-map-link" target="_blank">View on Google Maps</a></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/clock.png" alt="Office Hours" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">Office Hours</div>
+          <div class="contact-info">Mon-Fri: 8:00am - 4:00pm</div>
+          <div class="contact-extra">Visits by appointment recommended.</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon"><img src="https://img.icons8.com/fluency/48/000000/support.png" alt="Support" width="32"></span>
+        <div class="contact-details">
+          <div class="contact-label">Parent Support Hotline</div>
+          <div class="contact-info"><a href="tel:+01800888888">+01 800-888-8888</a></div>
+          <div class="contact-extra">24/7 urgent help for families.</div>
+        </div>
+      </div>
+      <div class="social-row">
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer-section">
+    <div class="container">
+      <h6>Get In Touch!</h6>
+      <p><strong>Phone:</strong> +01 123467890 | <strong>Email:</strong> info@oiniaelementary.edu</p>
+      <div>
+        <span>Follow us:</span>
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+      <div class="mt-2"><small>&copy; 2025 Oinia Elementary School. All Rights Reserved.</small></div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

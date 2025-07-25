@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meet The Staff | Oinia Elementary School</title>
+  <!-- Bootstrap, Google Fonts, Animate.css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root {
+      --primary: #4e9af1;
+      --accent: #ffd166;
+      --glass: rgba(255,255,255,0.45);
+      --glass-border: rgba(76, 173, 255, 0.13);
+      --heading: 'Playfair Display', serif;
+      --body: 'Nunito', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--body);
+      background: linear-gradient(130deg, #e3f0ff 0%, #f8fbff 100%);
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--heading);
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .navbar {
+      background: var(--glass)!important;
+      border-bottom: 2px solid var(--glass-border);
+      box-shadow: 0 2px 16px var(--glass-border);
+    }
+    .navbar-brand, .nav-link {
+      color: var(--primary)!important;
+      font-weight: 600;
+      font-family: var(--heading);
+    }
+    .navbar-brand img {
+      height: 32px;
+      margin-right: 0.5em;
+    }
+    .nav-link.active, .nav-link:hover {
+      color: #1877f2!important;
+      background: var(--glass);
+      border-radius: 10px;
+      padding: 0.4em 0.9em;
+    }
+    .logo-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2em 0 2em 0;
+    }
+    .logo-center img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--glass);
+      box-shadow: 0 8px 32px var(--glass-border);
+      border: 3px solid var(--primary);
+      padding: 8px;
+      animation: zoomIn 1s;
+    }
+    .staff-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2em 2em;
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
+    .staff-card {
+      background: var(--glass);
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 4px 18px var(--glass-border);
+      width: 310px;
+      min-width: 220px;
+      max-width: 97vw;
+      padding: 1.2em 1em 1em 1em;
+      text-align: center;
+      animation: fadeInUp 1s;
+      transition: box-shadow .2s, transform .2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .staff-card:hover {
+      box-shadow: 0 12px 38px var(--glass-border);
+      transform: scale(1.07) translateY(-5px);
+      z-index: 2;
+    }
+    .staff-img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 0.6em;
+      border: 4px solid var(--accent);
+      box-shadow: 0 2px 16px #ffd16633;
+      animation: zoomIn 1.1s;
+    }
+    .staff-role {
+      font-size: 1.1em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.2em;
+      letter-spacing: 0.5px;
+    }
+    .staff-name {
+      font-size: 1.25em;
+      font-weight: bold;
+      margin-bottom: 0.1em;
+      color: #155fa2;
+      letter-spacing: 1px;
+    }
+    .staff-bio {
+      font-size: 1.01em;
+      color: #333c55;
+      margin-bottom: 0.7em;
+      margin-top: 0.2em;
+      text-align: left;
+      padding: 0 0.4em;
+    }
+    .staff-contact {
+      font-size: 0.97em;
+      color: #4e9af1;
+      margin-top: 0.35em;
+      padding: 0.3em 0 0.2em 0;
+      border-top: 1px dashed #4e9af122;
+    }
+    .staff-social {
+      margin-top: 0.4em;
+    }
+    .staff-social a {
+      display: inline-block;
+      margin: 0 7px;
+      font-size: 1.1em;
+      color: var(--accent);
+      transition: color .2s;
+    }
+    .staff-social a:hover {
+      color: #4e9af1;
+    }
+    .footer-section {
+      background: linear-gradient(90deg, #4e9af1 0%, #4286d4 100%);
+      color: #fff;
+      border-top: 2px solid var(--glass-border);
+      padding: 1.2em 0 0.6em;
+      margin-top: 1.5em;
+      border-radius: 16px 16px 0 0;
+      text-align: center;
+      font-family: var(--heading);
+      font-size: 0.97em;
+    }
+    .footer-section a {
+      color: #ffd166;
+      text-decoration: underline;
+    }
+    @media (max-width: 1100px) {
+      .staff-gallery { gap: 1.2em 1em; }
+      .logo-center img { width: 80px; height: 80px; }
+    }
+    @media (max-width: 700px) {
+      .staff-gallery { gap: 1em; }
+      .staff-card { width: 99vw; min-width: 90vw; }
+    }
+    @media (max-width: 600px) {
+      .staff-card {
+        width: 98vw;
+        padding: 0.8em 0.2em 0.6em 0.2em;
+      }
+      .staff-img {
+        width: 70px;
+        height: 70px;
+      }
+      .logo-center img {
+        width: 56px;
+        height: 56px;
+      }
+      .footer-section { font-size: 0.83em; }
+    }
+    @keyframes fadeInUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes zoomIn {from{opacity:0;transform:scale(.8);}to{opacity:1;transform:scale(1);}}
+  </style>
+</head>
+<body>
+    <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=80" alt="School Logo">
+        Oinia Elementary
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-2 gap-1">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h2 class="mb-4 text-center fw-semibold animate__animated animate__fadeInDown">Meet Our Staff</h2>
+  <div class="logo-center">
+    <img src="https://img.freepik.com/free-vector/education-logo-template_23-2149493793.jpg?w=160" alt="School Logo">
+  </div>
+  <div class="staff-gallery">
+
+    <!-- Staff Card 1 -->
+    <div class="staff-card animate__animated animate__fadeInUp">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ms. Emily Carter" class="staff-img">
+      <div class="staff-name">Ms. Emily Carter</div>
+      <div class="staff-role">Principal</div>
+      <div class="staff-bio">
+        With over 25 years in education, Ms. Carter is the heart of Oinia Elementary. She believes every child deserves a champion and builds a culture of respect, joy, and curiosity. Outside of school, she enjoys hiking, painting, and volunteering at local animal shelters.
+        <br><strong>Fun fact:</strong> She once climbed Mount Kilimanjaro!
+      </div>
+      <div class="staff-contact">Email: emily.carter@oinia.edu</div>
+      <div class="staff-social">
+        <a href="#"><img src="https://img.icons8.com/color/24/facebook-new.png"/></a>
+        <a href="#"><img src="https://img.icons8.com/color/24/twitter.png"/></a>
+      </div>
+    </div>
+
+    <!-- Staff Card 2 -->
+    <div class="staff-card animate__animated animate__fadeInUp">
+      <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Mr. John Nguyen" class="staff-img">
+      <div class="staff-name">Mr. John Nguyen</div>
+      <div class="staff-role">Grade 4 Teacher</div>
+      <div class="staff-bio">
+        Mr. Nguyen is known for his hands-on science experiments and interactive math games. His classroom is a hub of excitement and discovery. An advocate for STEM, he runs the after-school robotics club and loves to cook and travel with his family.
+        <br><strong>Fun fact:</strong> He collects rare comic books and speaks three languages.
+      </div>
+      <div class="staff-contact">Email: john.nguyen@oinia.edu</div>
+      <div class="staff-social">
+        <a href="#"><img src="https://img.icons8.com/color/24/facebook-new.png"/></a>
+        <a href="#"><img src="https://img.icons8.com/color/24/twitter.png"/></a>
+      </div>
+    </div>
+
+    <!-- Staff Card 3 -->
+    <div class="staff-card animate__animated animate__fadeInUp">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ms. Sarah Lopez" class="staff-img">
+      <div class="staff-name">Ms. Sarah Lopez</div>
+      <div class="staff-role">Art & Music Teacher</div>
+      <div class="staff-bio">
+        Ms. Lopez fills Oinia with music, color, and creativity. Her art classes are vibrant and her music lessons are always full of laughter. She organizes the annual school play, and loves teaching kids about world cultures through art.
+        <br><strong>Fun fact:</strong> She plays five musical instruments.
+      </div>
+      <div class="staff-contact">Email: sarah.lopez@oinia.edu</div>
+      <div class="staff-social">
+        <a href="#"><img src="https://img.icons8.com/color/24/instagram-new.png"/></a>
+      </div>
+    </div>
+
+    <!-- Staff Card 4 -->
+    <div class="staff-card animate__animated animate__fadeInUp">
+      <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="Mrs. Linda Smith" class="staff-img">
+      <div class="staff-name">Mrs. Linda Smith</div>
+      <div class="staff-role">School Counselor</div>
+      <div class="staff-bio">
+        Mrs. Smith is the go-to for big feelings and small worries. She teaches mindfulness, resilience, and kindness in every lesson. After hours, she leads family workshops and volunteers at a crisis helpline.
+        <br><strong>Fun fact:</strong> She’s a certified yoga instructor!
+      </div>
+      <div class="staff-contact">Email: linda.smith@oinia.edu</div>
+      <div class="staff-social">
+        <a href="#"><img src="https://img.icons8.com/color/24/instagram-new.png"/></a>
+      </div>
+    </div>
+
+    <!-- Staff Card 5 -->
+    <div class="staff-card animate__animated animate__fadeInUp">
+      <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Mr. David Brown" class="staff-img">
+      <div class="staff-name">Mr. David Brown</div>
+      <div class="staff-role">Physical Education</div>
+      <div class="staff-bio">
+        Mr. Brown makes fitness fun for everyone. His energetic games and sports clinics help kids discover their strengths and build confidence. He organizes the annual Field Day, and runs weekend hiking trips for families.
+        <br><strong>Fun fact:</strong> He once ran a marathon dressed as a superhero!
+      </div>
+      <div class="staff-contact">Email: david.brown@oinia.edu</div>
+      <div class="staff-social">
+        <a href="#"><img src="https://img.icons8.com/color/24/facebook-new.png"/></a>
+      </div>
+    </div>
+
+    <!-- Staff Card 6 -->
+    <div class="staff-card animate__animated animate__fadeInUp">
+      <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Mr. Alex Turner" class="staff-img">
+      <div class="staff-name">Mr. Alex Turner</div>
+      <div class="staff-role">School Librarian</div>
+      <div class="staff-bio">
+        Mr. Turner brings stories to life in the Oinia library. He runs reading challenges and book fairs, and always has a recommendation for every student. He also coaches the chess club and loves photography.
+        <br><strong>Fun fact:</strong> He’s written a children’s mystery novel!
+      </div>
+      <div class="staff-contact">Email: alex.turner@oinia.edu</div>
+      <div class="staff-social">
+        <a href="#"><img src="https://img.icons8.com/color/24/twitter.png"/></a>
+      </div>
+    </div>
+
+    <!-- Add more staff cards if you like! -->
+  </div>
+  <footer class="footer-section">
+    <div class="container">
+      <h6>Get In Touch!</h6>
+      <p><strong>Phone:</strong> +01 123467890 | <strong>Email:</strong> info@oiniaelementary.edu</p>
+      <div>
+        <span>Follow us:</span>
+        <a href="#"><img src="https://img.freepik.com/free-icon/facebook_318-67487.jpg?w=28" alt="Facebook"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/twitter_318-67452.jpg?w=28" alt="Twitter"></a>
+        <a href="#"><img src="https://img.freepik.com/free-icon/instagram_318-67451.jpg?w=28" alt="Instagram"></a>
+      </div>
+      <div class="mt-2"><small>&copy; 2025 Oinia Elementary School. All Rights Reserved.</small></div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
